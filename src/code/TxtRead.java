@@ -17,18 +17,25 @@ public class TxtRead {
 			Random ywRandom=new Random();
 			Random yyRandom=new Random();
 			Random sxRandom=new Random();
+			int ywC = 0,yyC = 0,sxC = 0;
 			
 			while ((s = brstu.readLine()) != null) {
 				s+="\t";
-				s+=ywRandom.nextInt(51)+50;
+				int ywT=ywRandom.nextInt(51)+50;
+				s+=ywT;
+				ywC+=ywT;
 				s+="\t";
-				s+=yyRandom.nextInt(51)+50;
+				int yyT=yyRandom.nextInt(51)+50;
+				s+=yyT;
+				yyC+=yyT;
 				s+="\t";
-				s+=sxRandom.nextInt(51)+50;
+				int sxT=sxRandom.nextInt(51)+50;
+				s+=sxT;
+				sxC+=sxT;
 				s += System.lineSeparator();
-				
 				bwst.write(s);
 			}
+			bwst.write("\t"+ywC+"\t"+yyC+"\t"+sxC);
 		} finally {
 			if (bwst != null)
 				bwst.close();
